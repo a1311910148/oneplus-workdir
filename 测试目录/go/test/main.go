@@ -1,7 +1,6 @@
 package main
 
 func main() {
-	// fmt.Println("hello world")
 	// fmt.Println(mathMod.Add(1, 2))
 	// fmt.Println(mathMod.Comp(1, 2))
 	// myhttp.Start("3000")

@@ -1,0 +1,18 @@
+@mixin flex-center($width, $height) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $height;
+    width: $width;
+
+    >div {
+        display: flex;
+        flex: 1;
+        height: 100%
+    }
+}
+
+
+.box {
+    @include flex-center(100px, 200px);
+}

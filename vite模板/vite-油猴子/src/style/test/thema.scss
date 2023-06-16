@@ -1,0 +1,36 @@
+$main: #007bff;
+$submain: #6c757d;
+$success: #28a745;
+$warn: #ffc107;
+$error: #dc3545;
+$hh: header;
+
+
+.header {
+    background-color: $main;
+    color: white;
+}
+
+.button {
+    background-color: $submain;
+    color: white;
+
+    &:hover {
+        background-color: rgba($submain, 10%);
+    }
+}
+
+.alert {
+    background-color: $warn;
+    color: black;
+}
+
+.success {
+    background-color: $success;
+    color: white;
+}
+
+.error {
+    background-color: $error;
+    color: white;
+}

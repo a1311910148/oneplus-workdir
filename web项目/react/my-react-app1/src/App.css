@@ -1,0 +1,90 @@
+.box {
+    width: 3000px;
+    height: 100vh;
+    overflow: scroll;
+}
+
+input {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    color: #333;
+    text-align: left;
+    text-decoration: none;
+    list-style: none;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    width: 4rem;
+    margin: 0;
+    border: unset;
+    border: 1px solid rgb(172, 171, 171);
+    border-radius: 0;
+}
+
+input:hover {
+    cursor: cell;
+}
+
+.top {
+    display: flex;
+    padding-left: 2rem;
+    background-color: #5ee069;
+}
+
+.top div {
+    width: 4rem;
+    text-align: center;
+    background-color: #5ee069;
+    border-right: 1px solid rgb(110, 110, 110);
+    box-sizing: border-box;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+}
+
+.left div {
+    height: 26px;
+    text-align: center;
+    width: 2rem;
+    background-color: #5ee069;
+}
+
+.selectBox {
+    background: #26252540;
+    position: fixed;
+    border: 2px solid rgb(111, 64, 112);
+    box-sizing: border-box;
+}
+
+.ContextMenu {
+    position: fixed;
+    top: 100px;
+    left: 100px;
+    border: 1px solid rgb(173, 173, 173);
+    background: #fffefe;
+    width: 150px;
+    padding: 5px 0;
+    font-size: 15px;
+    box-shadow: 0 0 8px gray;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    padding-left: .5rem;
+}
+
+ul li:hover {
+    cursor: pointer;
+    background: #e4e2e2;
+}

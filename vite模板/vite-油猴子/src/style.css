@@ -1,0 +1,48 @@
+:root {
+  --de: black
+}
+
+.vcd,
+.activity-m-v1,
+.video-toolbar-right,
+#danmukuBox,
+.main-reply-box,
+#v_tag,
+.layout-Banner,
+.layout-Aside,
+.HeaderGif-right,
+.HeaderGif-left,
+#v_desc {
+  opacity: 0;
+  display: none;
+  position: fixed;
+  top: -1000px;
+}
+
+#biliMainHeader {
+  opacity: 0;
+}
+
+#biliMainHeader:hover {
+  opacity: 1;
+}
+
+.video-container-v1 {
+  transform: translateY(-60px);
+}
+
+.bpx-player-dm-root {
+  justify-content: end !important;
+}
+
+.bpx-player-sending-bar .bpx-player-video-inputbar {
+  display: none;
+}
+
+.layout-Main {
+  margin-left: 0 !important;
+}
+
+.bpx-player-ctrl-btn {
+  color: black !important;
+}

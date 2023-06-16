@@ -1,0 +1,38 @@
+.layout-Banner,
+.layout-Aside,
+.HeaderGif-right,
+.HeaderGif-left,
+.layout-Module-extra,
+.layout-Module-head,
+.GiftNamingEntrance,
+.DiamondFansMatchEntrance,
+.TitleSuperFansWrap,
+.Title-sharkWeight,
+.Title-report,
+.Title-anchorHot,
+.RoomVipSysTitle,
+.PlayerToolbar-ContentRow,
+.GiftNaming202304,
+.ActBase,
+.ClientJump-qrcodeBox,
+.TitleShare-shareBox,
+.PhoneWatch-qrcodeBox,
+.RankCoverage,
+.EntryNav {
+    opacity: 0;
+    display: none;
+    position: fixed;
+    top: -1000px;
+}
+
+.layout-Container .layout-Main {
+    margin-left: 0 !important;
+}
+
+.Header-wrap {
+    background-color: rgb(56 56 56);
+}
+
+.layout-Player-asideMain {
+    transform: scale(.8);
+}

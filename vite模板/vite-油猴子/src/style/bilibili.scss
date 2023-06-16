@@ -1,0 +1,54 @@
+.vcd,
+.activity-m-v1,
+.video-toolbar-right,
+#danmukuBox,
+.main-reply-box,
+.bpx-player-video-inputbar,
+#v_tag,
+#v_desc,
+.ad-report,
+.upinfo-btn-panel .new-charge-btn {
+    opacity: 0;
+    display: none;
+    position: fixed;
+    top: -1000px;
+}
+
+#biliMainHeader {
+    opacity: 0;
+}
+
+#biliMainHeader:hover {
+    opacity: 1;
+}
+
+.video-container-v1 {
+    transform: translateY(-60px);
+}
+
+.bpx-player-dm-root {
+    justify-content: end !important;
+}
+
+.bpx-player-sending-bar .bpx-player-video-inputbar {
+    display: none;
+}
+
+.bpx-player-ctrl-btn {
+    color: black !important;
+}
+
+.left-container {
+    width: 1250px !important;
+}
+
+#bilibili-player {
+    width: 1250px !important;
+    height: 759px !important;
+}
+.video-toolbar-container {
+    padding-top: 100px !important;
+}
+#app {
+    overflow-x: hidden;
+}

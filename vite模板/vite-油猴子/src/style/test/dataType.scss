@@ -1,0 +1,19 @@
+$number1: 1;
+$color: #ccc;
+$color1: rgba(1, 2, 3, .2);
+$color2:white;
+$list:1px 2px 3px 4px;
+$boolen: true;
+
+
+.flex {
+    flex: $number1;
+}
+
+p {
+    color: $color;
+}
+
+main {
+    border: $list;
+}

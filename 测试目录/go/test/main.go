@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"main/mongodb"
 	"net/http"
 	"strconv"
@@ -19,12 +20,12 @@ func main() {
 	// ins := scanpck.Factory("admin", map[string]interface{}{"name": "admin", "age": 18, "password": "123456", "account": "admin", "level": 1})
 	// fmt.Println(ins)
 	// mongodb.Test()
-	mongodb.AddUser(mongodb.User{Name: "szx", Age: 12, Email: "1311910148@qq.com"})
 	// 启动一个http服务器 用于接收请求
 	// http router:
 	// /api/adduser Get
 	// 回调函数获取查询字符串
 	http.HandleFunc("/api/adduser", func(w http.ResponseWriter, r *http.Request) {
+		defer fmt.Println("发生错误")
 		// 获取查询字符串
 		name := r.URL.Query().Get("name")
 		age := r.URL.Query().Get("age")

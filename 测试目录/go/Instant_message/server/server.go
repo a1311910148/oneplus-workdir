@@ -50,7 +50,7 @@ func (s *Server) process(Conn net.Conn) {
 	// 读取客户端发送的信息
 	defer Conn.Close()
 
-	user := CreateUser(Conn)
+	user := CreateUser(Conn, s)
 
 	// 广播在线
 	s.Broadcast(user, "在线")
@@ -83,6 +83,8 @@ func (s *Server) process(Conn net.Conn) {
 
 func CreateServer() *Server {
 	return &Server{
-		Ip:   "127.0.0.1",
-		Port: "8888"}
+		Ip:      "127.0.0.1",
+		Port:    "8888",
+		UserArr: make([]User, 4),
+	}
 }

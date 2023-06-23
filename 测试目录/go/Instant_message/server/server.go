@@ -35,26 +35,38 @@ func (s *Server) Start() {
 	}
 }
 
+// broadcast
+func (s *Server) Broadcast(user *user.User, content string) {
+	// 创建消息
+	msg := user.Name + ":" + content
+
+	for _, v := range s.UserArr {
+		if v.Name != user.Name {
+			v.C <- msg
+		}
+	}
+}
+
 // process
 func (s *Server) process(Conn net.Conn) {
 	// 读取客户端发送的信息
 	defer Conn.Close()
-	adrr := Conn.RemoteAddr().String()
 
-	// 实例化User
-	u := &user.User{
-		Conn: Conn,
-		C:    make(chan string),
-		Name: "",
-		Addr: adrr,
-	}
+	user := user.CreateUser(Conn)
+
+	// 广播在线
+	s.Broadcast(user, "在线")
 
 	// 添加用户
-	s.UserArr = append(s.UserArr, *u)
+	s.UserArr = append(s.UserArr, *user)
 
 	for {
 		buf := make([]byte, 1024)
 		n, err := Conn.Read(buf) //Conn.Read方法
+		if n == 0 {
+			Conn.Close()
+			return
+		}
 		if err != nil {
 			fmt.Println("Conn.Read err:", err)
 			return
@@ -65,49 +77,9 @@ func (s *Server) process(Conn net.Conn) {
 
 		json.Unmarshal(buf[:n], &m)
 
-		fmt.Println("adrr:", adrr, "content:", m.Content) //打印消息
+		fmt.Println("user:", user.Name, "content:", m.Content) //打印消息
 
-		// 判断是否为登录
-		if m.Type == "login" {
-			// 设置用户姓名
-			u.Name = m.Name
-			// 向其他用户广播
-			for _, user := range s.UserArr {
-				if user.Name != m.Name {
-					user.Conn.Write([]byte(m.Name + "online\n"))
-				}
-			}
-			return
-		}
-
-		// 点对点通信
-		if m.To != "" {
-			for _, user := range s.UserArr {
-				if user.Name == m.To {
-					user.Conn.Write([]byte(m.Content))
-				}
-			}
-			return
-		}
-
-		// 广播消息
-		for _, user := range s.UserArr {
-			user.Conn.Write([]byte(m.Content))
-		}
-
-		// {"type":"login","name":"wanglei"}
-		// {"type":"message","name":"wanglei","content":"is here people ","from":"wanglei","to":""}
-		// 判断是否收信方
-		// if m.To != "" {
-		// 	// 遍历ConnArr
-		// 	for _, user := range s.UserArr {
-		// 		if user.Name == m.To {
-		// 			user.Con .Write([]byte(m.Content))
-		// 		}
-		// 	}
-		// 	return
-		// }
-
+		user.Message(m)
 	}
 }
 

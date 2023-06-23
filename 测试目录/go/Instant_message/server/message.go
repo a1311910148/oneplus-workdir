@@ -1,4 +1,4 @@
-package incomemessage
+package server
 
 type Message struct {
 	Type    string

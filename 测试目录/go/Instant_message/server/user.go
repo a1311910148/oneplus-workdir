@@ -1,8 +1,6 @@
-package user
+package server
 
 import (
-	incomemessage "message/incomeMessage"
-	"message/server"
 	"net"
 )
 
@@ -12,7 +10,7 @@ type User struct {
 	Addr   string
 	C      chan string
 	Conn   net.Conn
-	Server *server.Server
+	Server *Server
 }
 
 func (user *User) ListenMessage() {
@@ -23,7 +21,7 @@ func (user *User) ListenMessage() {
 	}
 }
 
-func (user *User) Message(msg incomemessage.Message) {
+func (user *User) Message(msg Message) {
 	if msg.Type == "rename" {
 		// 判断用户名是否存在
 		for _, v := range user.Server.UserArr {

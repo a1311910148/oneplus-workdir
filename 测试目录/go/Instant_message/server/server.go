@@ -3,15 +3,13 @@ package server
 import (
 	"encoding/json"
 	"fmt"
-	incomemessage "message/incomeMessage"
-	"message/user"
 	"net"
 )
 
 type Server struct {
 	Ip      string
 	Port    string
-	UserArr []user.User
+	UserArr []User
 }
 
 // start server
@@ -36,7 +34,7 @@ func (s *Server) Start() {
 }
 
 // broadcast
-func (s *Server) Broadcast(user *user.User, content string) {
+func (s *Server) Broadcast(user *User, content string) {
 	// 创建消息
 	msg := user.Name + ":" + content
 
@@ -52,7 +50,7 @@ func (s *Server) process(Conn net.Conn) {
 	// 读取客户端发送的信息
 	defer Conn.Close()
 
-	user := user.CreateUser(Conn)
+	user := CreateUser(Conn)
 
 	// 广播在线
 	s.Broadcast(user, "在线")
@@ -73,7 +71,7 @@ func (s *Server) process(Conn net.Conn) {
 		}
 
 		// 解析json
-		var m incomemessage.Message
+		var m Message
 
 		json.Unmarshal(buf[:n], &m)
 

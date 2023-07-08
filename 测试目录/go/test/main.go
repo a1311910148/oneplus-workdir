@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"main/mongodb"
+	mongodb "main/mongodb"
 	"net/http"
 	"strconv"
 )

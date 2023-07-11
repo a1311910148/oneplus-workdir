@@ -38,16 +38,18 @@
     color: black !important;
 }
 
-.left-container {
-    width: 1250px !important;
-}
-
-#bilibili-player {
-    width: 1250px !important;
-    height: 759px !important;
-}
-.video-toolbar-container {
-    padding-top: 100px !important;
+// 屏幕大于1600
+@media screen and (min-width: 1600px) {
+    .left-container {
+        width: 1250px !important;
+    }
+    #bilibili-player {
+        width: 1250px !important;
+        height: 759px !important;
+    }
+    .video-toolbar-container {
+        padding-top: 100px !important;
+    }
 }
 #app {
     overflow-x: hidden;

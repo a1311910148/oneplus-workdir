@@ -1,3 +1,6 @@
 go 1.20
 
-use ./测试目录/go/Instant_message
+use (
+	./测试目录/go/Instant_message
+	./测试目录/go/test
+)

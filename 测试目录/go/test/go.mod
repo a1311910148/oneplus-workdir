@@ -1,4 +1,4 @@
-module main
+module servertest
 
 go 1.20
 

@@ -9,7 +9,7 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
-func Connect() interface{} {
+func Connect() *mongo.Client {
 	// 设置MongoDB连接选项
 	clientOptions := options.Client().ApplyURI("mongodb://localhost:27017")
 

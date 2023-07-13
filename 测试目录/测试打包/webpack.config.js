@@ -14,7 +14,6 @@ module.exports = {
     ],
   },
   plugins: [
-    new fileListTxtWebpackPlugin(),
     new MiniCssExtractPlugin(),
     new webpack.ProgressPlugin(),
     // new webpack.BannerPlugin("banner"),

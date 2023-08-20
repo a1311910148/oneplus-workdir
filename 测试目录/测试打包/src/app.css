@@ -2,3 +2,13 @@ button {
     background: #000 !important;
     transform: scale(2) !important;
 }
+
+button.active {
+    background: #fff !important;
+    transform: scale(1) !important;
+}
+
+button.disabled {
+    background: #ccc !important;
+    transform: scale(1) !important;
+}

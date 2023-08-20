@@ -2,5 +2,8 @@ go 1.20
 
 use (
 	./测试目录/go/Instant_message
+	./测试目录/go/goStudy/greetings
+	./测试目录/go/goStudy/hello
 	./测试目录/go/test
+	./测试目录/测试打包/src/test
 )

@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"log"
 
-	"go.mongodb.org/mongo-driver/mongo"
 	"gopkg.in/mgo.v2/bson"
 )
 
@@ -17,7 +16,7 @@ type User struct {
 
 // 添加一个用户
 func AddUser(user User) {
-	client := Connect().(*mongo.Client)
+	client := Connect()
 	// 向test数据库 新建一个danmu表
 	collection := client.Database("test").Collection("danmu")
 	// 添加一条数据

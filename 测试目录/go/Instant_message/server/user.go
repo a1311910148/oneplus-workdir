@@ -54,7 +54,7 @@ func CreateUser(Conn net.Conn, Server *Server) *User {
 	user := &User{
 		Name:   adrr,
 		C:      make(chan string),
-		Conn:   nil,
+		Conn:   Conn,
 		Server: Server,
 	}
 	// 开启一个协程
